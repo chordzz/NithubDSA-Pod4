@@ -1,0 +1,21 @@
+{
+  "name": "notes-app-be",
+  "version": "1.0.0",
+  "description": "backend for pod-4-datastore",
+  "main": "server.js",
+  "dependencies": {
+    "@types/uuid": "^9.0.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "joi": "^17.8.3",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
