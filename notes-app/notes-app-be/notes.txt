@@ -1,0 +1,26 @@
+commons:
+    shared:
+    exceptions:
+    validationSchemas:
+
+routes:
+
+
+handlers:[handle]
+    * ErrorHandler
+    * NotFoundHandler
+    * ControllerHandler
+
+
+
+* Things needed
+    - Exceptions.
+    - Interface for the datastore
+    - Check the Error capture stack trace stuff.
+    - put the types and interfaces in their appropriate folders
+    - Finish the DataStoreImpl class.
+    - Finish dockerizing the application.
+
+
+
+* Design Decision to make
