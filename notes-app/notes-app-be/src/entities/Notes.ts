@@ -1,6 +1,4 @@
-
-import * as uuid from "uuid";
-
+import * as rand from "nanoid";
 export class Notes {
     public readonly id: string;
 
@@ -11,7 +9,7 @@ export class Notes {
     public createdAt: Date;
 
     constructor() {
-        this.id = uuid.v4().toString();
+        this.id = rand.random(10).toString();
     }
 
 }
