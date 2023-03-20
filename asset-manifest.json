@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/NithubDSA-Pod4/static/css/main.7b147574.css",
+    "main.js": "/NithubDSA-Pod4/static/js/main.f1c5c740.js",
+    "static/js/787.431f3af9.chunk.js": "/NithubDSA-Pod4/static/js/787.431f3af9.chunk.js",
+    "index.html": "/NithubDSA-Pod4/index.html",
+    "main.7b147574.css.map": "/NithubDSA-Pod4/static/css/main.7b147574.css.map",
+    "main.f1c5c740.js.map": "/NithubDSA-Pod4/static/js/main.f1c5c740.js.map",
+    "787.431f3af9.chunk.js.map": "/NithubDSA-Pod4/static/js/787.431f3af9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7b147574.css",
+    "static/js/main.f1c5c740.js"
+  ]
+}
