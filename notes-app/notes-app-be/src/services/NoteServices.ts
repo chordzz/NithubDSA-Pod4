@@ -16,7 +16,7 @@ export class NoteServices {
      */
     public createNote = async ({ body }: RequestContext): Promise<ResponseContext> => {
         // perform operation
-        const notes = new Notes();
+        const notes = new Notes("");
         notes.content = body.content;
         notes.createdAt = new Date(Date.now());
         notes.title = body.title;
@@ -50,9 +50,11 @@ export class NoteServices {
      * @returns Promise<ResponseContext>
      */
     public getNote = async ({ params }: RequestContext): Promise<ResponseContext> => {
-
-
-        return
+       
+        return {
+            code: 200,
+            data: [],
+        }
     }
 
     /**

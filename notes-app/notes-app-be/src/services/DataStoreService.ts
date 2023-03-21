@@ -5,7 +5,7 @@ import {Notes} from "../entities";
  * @classdesc Data store interface.
  */
 export interface DataStore {
-    create(note: Notes): Notes;
+    create(title: string): Notes;
     getNote(id: string): Notes;
     getNotes(): Notes[];
     update(id: string, note: Notes): boolean;
@@ -17,8 +17,8 @@ export interface DataStore {
  * @classdesc Data store implementation
  */
 export class DataStoreImpl implements DataStore {
-    create(note: Notes): Notes {
-        return undefined;
+    create(title: string): Notes {
+        return new Notes(title);
     }
 
     delete(id: string): boolean {
@@ -26,9 +26,9 @@ export class DataStoreImpl implements DataStore {
     }
 
     getNote(id: string): Notes {
-        return undefined;
+        return new Notes("");
     }
-
+    
     getNotes(): Notes[] {
         return [];
     }

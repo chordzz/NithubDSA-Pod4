@@ -1,7 +1,7 @@
 import {ApiException} from "./ApiException";
 
 export class NotFoundException extends ApiException {
-    constructor(message?: string) {
+    constructor(message: string) {
         super(message);
         this.message = message;
         this.statusCode = 401;

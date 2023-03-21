@@ -1,8 +1,7 @@
-import * as express from "express";
 import {notFoundHandler, errorHandler} from "./handlers";
 import { notesRouter } from "./routes";
-
-export const app: express.Application = express();
+const express = require('express');
+export const app = express();
 
 app.use(express.json())
 app.use("/api/v1/", notesRouter);

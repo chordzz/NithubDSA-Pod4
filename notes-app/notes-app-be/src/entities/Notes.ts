@@ -1,15 +1,18 @@
-import * as rand from "nanoid";
+import { nanoid } from 'nanoid'
+
 export class Notes {
     public readonly id: string;
 
     public title: string;
 
-    public content: string;
+    public content: string | undefined;
 
     public createdAt: Date;
 
-    constructor() {
-        this.id = rand.random(10).toString();
+    constructor(title: string) {
+        this.id = nanoid(10);
+        this.createdAt = new Date();
+        this.title = title
     }
 
 }
