@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CustomModal } from "../custom-modal/custom-modal";
 import { NoteDetails } from "../note-details/note-details";
+import { NoteEdit } from "../note-edit/note-edit";
 import { Note1 } from "../note/note1";
 import { Note2 } from "../note/note2";
 import { Note3 } from "../note/note3";
@@ -25,6 +26,8 @@ interface myProps {
 export const NotesList = ({ notes }: myProps) => {
   const [openModal, setOpenModal] = useState(false);
   const [openedNote, setOpenedNote] = useState<myProps["note"]>(null);
+  const [editMode, setEditMode] = useState(false);
+  const [edited, setEdited] = useState(true);
   const handleOpenModal = (note: myProps["note"]) => {
     setOpenModal(true);
     setOpenedNote(note);
@@ -87,7 +90,21 @@ export const NotesList = ({ notes }: myProps) => {
           }
         })}
         <CustomModal openModal={openModal} closeModal={handleCloseModal}>
-          <NoteDetails note={openedNote} />
+          {editMode ? (
+            <NoteEdit
+              note={openedNote}
+              setEditMode={setEditMode}
+              edited={edited}
+              editMode={editMode}
+              setEdited={setEdited}
+            />
+          ) : (
+            <NoteDetails
+              note={openedNote}
+              setEditMode={setEditMode}
+              editMode={editMode}
+            />
+          )}
         </CustomModal>
       </div>
     </div>
