@@ -4,7 +4,7 @@ export const NewNoteBtn = () => {
   return (
     <button
       type="button"
-      className="font-medium rounded-lg text-sm px-2 py-2.5 text-center inline-flex border items-center border-white cursor-pointer"
+      className="font-medium rounded-lg text-sm px-2 py-2.5 text-center inline-flex border items-center border-white"
     >
       <svg
         fill="none"
