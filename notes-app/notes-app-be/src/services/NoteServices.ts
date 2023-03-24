@@ -1,5 +1,7 @@
 import {RequestContext, ResponseContext} from "../handlers";
 import {Notes} from "../entities";
+import DataStoreImpl, {DataStore} from "./DataStoreService";
+import {NotFoundException} from "../commons/exceptions";
 
 /**
  * @classdesc Handles the business logic for Notes
@@ -7,7 +9,7 @@ import {Notes} from "../entities";
 
 export class NoteServices {
 
-    constructor() {}
+    constructor(private readonly noteRepo: DataStore) {}
 
     /**
      * @desc Create a new note in the datastore
@@ -21,7 +23,10 @@ export class NoteServices {
         notes.createdAt = new Date(Date.now());
         notes.title = body.title;
 
-        // db operations.
+        // save the note to the db
+        await this.noteRepo.create(notes);
+
+        // re-index the note indexer.
 
 
         return {
@@ -62,8 +67,11 @@ export class NoteServices {
      * @returns Promise<ResponseContext>
      */
     public updateNote = async ({ params, body }: RequestContext): Promise<ResponseContext> => {
-        // perform stuffs
+        const note = await this.noteRepo.getNote(params.id);
+        if (!note)
+            throw new NotFoundException("Note not found");
 
+        // note.content =
 
         return {
             code: 200,
@@ -77,11 +85,12 @@ export class NoteServices {
      * @returns Promise<ResponseContext>
      */
     public deleteNote = async ({ params }: RequestContext): Promise<ResponseContext> => {
-
-
+        this.noteRepo.delete(params.id)
         return {
             message: "Awesome"
         }
     }
 
 }
+
+export default new NoteServices(DataStoreImpl)
