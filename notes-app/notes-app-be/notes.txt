@@ -24,3 +24,44 @@ handlers:[handle]
 
 
 * Design Decision to make
+
+
+{}
+
+// Record-Level inverted index.
+
+// the lazy dog  -> note1
+// the man said good day lazy boy -> note2 *
+
+
+
+[the , lasy, dog]
+
+
+"lazy" =>
+
+// is the current word already occurring in other notes
+    // YES:
+        // add the current note id to the array
+    // NO:
+        // create a new index { currentWord: [currentNote] }
+
+
+
+// split("")
+
+// current state of the inverted index upon creating note 1.
+{
+    "the" -> ["note1"],
+    "lazy" -> ["note1"],
+    "sun" -> ["note1"]
+}
+
+// current state of inverted index upon creating note 2
+{
+    "the" -> ["note1", "note2"],
+    "lazy" -> ["note1", "note2"],
+    "sun" -> ["note1"],
+    "good" -> ["note2"],
+    "day" -> ["note2"]
+}
