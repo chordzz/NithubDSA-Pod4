@@ -8,20 +8,11 @@ interface myProps {
     pinned: boolean;
   };
   handleOpenModal: () => void;
-  backgroundColor: string;
 }
 
-
-export const Note = ({ note, handleOpenModal, backgroundColor}: myProps) => {
-
-const addToFavorites = () => {
-  return note.pinned = !note.pinned
-  // console.log(note.pinned)
-};
+export const Note2 = ({ note, handleOpenModal }: myProps) => {
   return (
-    <div
-      className={`note my-2 bg-[${backgroundColor}] h-[120px] w-[250px] md:h-[150px] md:w-[300px] border-r-2 border-b-2 border-[${backgroundColor}] rounded-r-3xl rounded-bl-3xl`}
-    >
+    <div className="note my-2 bg-[#F7D44C] h-[120px] w-[250px] md:h-[150px] md:w-[300px] rounded-r-3xl rounded-l-3xl border-2 border-[#d7c372]">
       <div className="h-full p-4 flex flex-col justify-between">
         <div className="h-[70%] flex items-center" onClick={handleOpenModal}>
           <h3 className="text-lg">{note.title}</h3>
@@ -31,10 +22,7 @@ const addToFavorites = () => {
             Last updated:{" "}
             <span className="text-xs font-light">{note.lastUpdate}</span>
           </p>
-          <span
-            onClick={addToFavorites}
-            className="bg-black/20 rounded-full p-2 cursor-pointer"
-          >
+          <span className="bg-black/20 rounded-full p-2">
             <svg
               fill={`${note.pinned ? "red" : "none"}`}
               stroke="currentColor"
