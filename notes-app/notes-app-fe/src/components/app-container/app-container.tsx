@@ -48,6 +48,10 @@ const AppContainer = () => {
     }
   };
 
+  const addToFavorites = () => {
+    
+  }
+
   const getPinnedNotes = () => {
     setFilteredNotes(notes.filter((note) => note.pinned === true));
   };
