@@ -11,5 +11,4 @@ export class Notes {
     constructor() {
         this.id = rand.random(10).toString();
     }
-
 }
