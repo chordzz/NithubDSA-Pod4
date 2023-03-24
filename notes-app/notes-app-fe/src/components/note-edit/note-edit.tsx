@@ -43,11 +43,14 @@ export const NoteEdit = ({
       {note ? (
         <div className="h-full p-5 flex flex-col justify-between gap-2 md:gap-6">
           <div className="header">
-            <input
-              className="text-xl md:text-4xl md:mb-8 bg-inherit w-full"
-              value={title}
-              onChange={handleTitleChange}
-            />
+            <div className="md:mb-8">
+              <input
+                className="text-xl md:text-4xl bg-inherit w-full"
+                value={title}
+                onChange={handleTitleChange}
+              />
+              <span className="text-green-500">(Edit mode)</span>
+            </div>
             <div className="text-xs md:text-sm md:w-[40%]">
               <p className="flex justify-between">
                 Date created: <span>23/11/2015</span>
@@ -81,7 +84,7 @@ export const NoteEdit = ({
               <button
                 type="button"
                 className="px-4 py-2 text-sm font-medium border border-white rounded-r-lg bg-green-500"
-                disabled={!edited}
+                disabled={!editMode}
                 onClick={handleSave}
               >
                 Save

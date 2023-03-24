@@ -7,7 +7,7 @@ export const SearchUi = () => {
     setOpen((prev) => !prev);
   };
   return (
-    <div className="hidden md:block w-1/2">
+    <div className="block md:w-1/2">
       <div className="flex relative">
         <button
           id="dropdown-button"

@@ -55,7 +55,7 @@ const AppContainer = () => {
   return (
     <div className="w-full lg:w-[80%] rounded-lg h-[600px] bg-black/80 my-auto">
       <div className="content p-4 md:p-10 h-full">
-        <div className="header flex justify-between items-center mt-8">
+        <div className="header flex flex-col md:flex-row justify-between gap-2 md:gap-0 md:items-center mt-8">
           <header className="flex items-end w-3/4 md:w-1/4 justify-between ">
             <h1 className="text-3xl font-mono">My Notes</h1>
             {/* <span>Pod 4</span> */}
