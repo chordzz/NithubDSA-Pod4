@@ -1,8 +1,21 @@
 import React from "react";
+import { OPEN_NEW_NOTE } from "../app-container/app-container";
 
-export const NewNoteBtn = () => {
+interface myProps {
+  setModalContent: React.Dispatch<React.SetStateAction<string>>;
+  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
+} 
+
+export const NewNoteBtn = ({ setModalContent, setOpenModal }: myProps) => {
+
+    const openNewNote = () => {
+      setModalContent(OPEN_NEW_NOTE);
+      setOpenModal(true);
+    };
+
   return (
     <button
+    onClick={openNewNote}
       type="button"
       className="font-medium rounded-lg text-sm px-2 py-2.5 text-center inline-flex border items-center border-white"
     >

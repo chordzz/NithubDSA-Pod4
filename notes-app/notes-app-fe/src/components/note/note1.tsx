@@ -8,11 +8,13 @@ interface myProps {
     pinned: boolean;
   };
   handleOpenModal: () => void;
+  backgroundColor: string;
+  addToFavorites: (id: string | number) => void;
 }
 
-export const Note1 = ({ note, handleOpenModal }: myProps) => {
+export const Note = ({ note, handleOpenModal, backgroundColor }: myProps) => {
   return (
-    <div className="note my-2 bg-[#EB7A53] h-[120px] w-[250px] md:h-[150px] md:w-[300px] border-r-2 border-b-2 border-[#ca846c] rounded-r-3xl rounded-bl-3xl">
+    <div className={`note my-2 bg-[${backgroundColor}] h-[120px] w-[250px] md:h-[150px] md:w-[300px] border-r-2 border-b-2 border-[${backgroundColor}] rounded-r-3xl rounded-bl-3xl`}>
       <div className="h-full p-4 flex flex-col justify-between">
         <div className="h-[70%] flex items-center" onClick={handleOpenModal}>
           <h3 className="text-lg">{note.title}</h3>
