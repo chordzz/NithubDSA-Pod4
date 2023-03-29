@@ -6,8 +6,10 @@ interface myProps {
   active: string;
   listLength: number;
   handleClick: (param: string) => void;
+  setModalContent: React.Dispatch<React.SetStateAction<string>>;
+  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
-export const TabsContainer = ({ active, handleClick, listLength }: myProps) => {
+export const TabsContainer = ({ active, handleClick, listLength, setModalContent, setOpenModal }: myProps) => {
   const tabs = [{ text: "All" }, { text: "Pinned" }];
 
   // const [active, setActive] = useState("All");
@@ -30,7 +32,10 @@ export const TabsContainer = ({ active, handleClick, listLength }: myProps) => {
         ))}
       </div>
 
-      <NewNoteBtn />
+      <NewNoteBtn
+        setModalContent={setModalContent}
+        setOpenModal={setOpenModal}
+      />
     </div>
   );
 };
