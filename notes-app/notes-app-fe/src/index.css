@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.note1 {
+    @apply h-[120px] w-[250px] md:h-[150px] md:w-[300px] border-r-2 border-b-2 border-[#FFFFF] rounded-r-3xl rounded-bl-3xl my-2 bg-note1
+}
+
+.note2 {
+    @apply h-[120px] w-[250px] md:h-[150px] md:w-[300px] border-r-2 border-b-2 border-[#FFFFF] rounded-r-3xl rounded-bl-3xl my-2 bg-note2
+}
+
+.note3 {
+    @apply h-[120px] w-[250px] md:h-[150px] md:w-[300px] border-r-2 border-b-2 border-[#FFFFF] rounded-r-3xl rounded-bl-3xl my-2 bg-note3
+}
+
+.note4 {
+    @apply h-[120px] w-[250px] md:h-[150px] md:w-[300px] border-r-2 border-b-2 border-[#FFFFF] rounded-r-3xl rounded-bl-3xl my-2 bg-note4
+}
+
+.note5 {
+    @apply h-[120px] w-[250px] md:h-[150px] md:w-[300px] border-r-2 border-b-2 border-[#FFFFF] rounded-r-3xl rounded-bl-3xl my-2 bg-note5
+}

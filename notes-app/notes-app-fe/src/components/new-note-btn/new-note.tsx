@@ -1,23 +1,25 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 interface myProps {
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const NewNote = ({ setOpenModal }: myProps) => {
-    const initailState = {title: '', content: ""}
+  const initailState = { title: "", content: "" };
 
-    const [noteInfo, setNoteInfo] = useState(initailState)
+  const [noteInfo, setNoteInfo] = useState(initailState);
 
   const handleNoteSave = () => {
     setOpenModal(false);
   };
 
   return (
-    <div className="h-full p-5 flex flex-col justify-between gap-2 md:gap-6">
+    <div className="bg-gray-600/50 h-[80vh] md:h-[90vh] w-[90vw] md:w-[60vw] p-5 flex flex-col justify-between gap-2 md:gap-6">
       <div className="header">
         <div className="">
-          <label htmlFor="" className="text-white text-xl">Title</label>
+          <label htmlFor="" className="text-white text-xl">
+            Title
+          </label>
           <input
             className="text-xl md:text-4xl w-full bg-inherit text-white border-blue-500 border outline-none p-2"
             value={noteInfo.title}
@@ -27,7 +29,8 @@ const NewNote = ({ setOpenModal }: myProps) => {
           />
         </div>
       </div>
-      <textarea rows={10}
+      <textarea
+        rows={10}
         className="grow overflow-y-scroll text-white bg-inherit border border-red-500"
         onChange={(e) => setNoteInfo({ ...noteInfo, content: e.target.value })}
         value={noteInfo.content}

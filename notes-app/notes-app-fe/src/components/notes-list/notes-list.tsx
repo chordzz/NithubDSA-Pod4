@@ -6,7 +6,6 @@ import { Note } from "../note/note1";
 import { VIEW_NOTE_DETAILS } from "../app-container/app-container";
 import NewNote from "../new-note-btn/new-note";
 
-
 interface myProps {
   notes: {
     title: string;
@@ -27,7 +26,14 @@ interface myProps {
   addToFavorites: (id: string | number) => void;
 }
 
-export const NotesList = ({ notes, addToFavorites, setModalContent, setOpenModal, openModal, modalContent }: myProps) => {
+export const NotesList = ({
+  notes,
+  addToFavorites,
+  setModalContent,
+  setOpenModal,
+  openModal,
+  modalContent,
+}: myProps) => {
   const [openedNote, setOpenedNote] = useState<myProps["note"]>(null);
   const [editMode, setEditMode] = useState(false);
   const [edited, setEdited] = useState(true);
@@ -48,11 +54,11 @@ export const NotesList = ({ notes, addToFavorites, setModalContent, setOpenModal
   //   return Math.floor(Math.random() * (max - min + 1) + min);
   // };
 
-    const colorArr = ["#fa7373", "#F7D44C", "#F6ECC9", "#98B7DB", "#A8D672"];
+  const colorArr = ["note1", "note2", "note3", "note4", "note5"];
 
-    const getRandomColor = (colorArr: Array<string>) => {
-      return colorArr[Math.floor(Math.random() * colorArr.length)];
-    };
+  const getRandomColor = (colorArr: Array<string>) => {
+    return colorArr[Math.floor(Math.random() * colorArr.length)];
+  };
 
   return (
     <div className="notes-wrapper h-[70%] xl:h-[75%] overflow-y-scroll">
@@ -64,7 +70,7 @@ export const NotesList = ({ notes, addToFavorites, setModalContent, setOpenModal
             <Note
               addToFavorites={addToFavorites}
               key={index}
-              backgroundColor={colorProps}
+              noteStyle={colorProps}
               note={note}
               handleOpenModal={() => handleOpenModal(note)}
             />
