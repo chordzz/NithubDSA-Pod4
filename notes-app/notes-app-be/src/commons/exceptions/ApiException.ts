@@ -9,7 +9,7 @@ export class ApiException extends Error {
         super(message);
         this.name = "API Exception";
         this.statusCode = 100;
-        this.message = message;
+        this.message = message!;
 
         Error.captureStackTrace(this, Error.constructor); //TODO:
     }

@@ -1,4 +1,4 @@
-import * as express from "express";
+import express from "express";
 import { notFoundHandler, errorHandler } from "./handlers";
 import { notesRouter } from "./routes";
 

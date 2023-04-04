@@ -1,11 +1,11 @@
 
 export class FileServices {
 
-    readFile = (path: string): Promise<any> => {
-        return;
-    }
+    // readFile = (path: string): Promise<any> => {
+    //     return;
+    // }
 
-    writeFile = (path: string, contents: any) => {
+    // writeFile = (path: string, contents: any) => {
 
-    }
+    // }
 }

@@ -15,6 +15,7 @@ export type IndexObjImpl = {
 export interface IndexService {
   index(note: Notes): Promise<void>;
   reIndex(prev: Notes, current: Notes): Promise<void>;
+  getNotes(word: string): Promise<{[noteId: string]: boolean}>;
 }
 
 class IndexServiceImpl implements IndexService {
@@ -65,6 +66,11 @@ class IndexServiceImpl implements IndexService {
     this.addWordsThatWereJustAdded(addedWords, previousNote.id);
     this.checkForWordsThatAreNotInAnyNote();
   };
+
+
+  getNotes = async (word: string): Promise<{[notedId: string]: boolean}> => {
+    return this.invertIndex[word]
+  }
 
   /**
    * @desc Omoooo
