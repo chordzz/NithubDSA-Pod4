@@ -15,3 +15,7 @@ export const updateNoteSchema: Joi.ObjectSchema = Joi.object().keys({
         id: Joi.string().required(),
     })
 })
+
+export const searchNoteSchema: Joi.ObjectSchema = Joi.object().keys({
+    query: Joi.string().required(),
+})

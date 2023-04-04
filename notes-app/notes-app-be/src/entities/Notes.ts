@@ -1,4 +1,6 @@
 import * as rand from "nanoid";
+
+
 export class Notes {
   public readonly id: string;
 
@@ -8,10 +10,13 @@ export class Notes {
 
   public createdAt: Date;
 
+  public isPinned: boolean;
+
   constructor() {
     this.id = rand.random(10).toString();
     this.title = "";
     this.content = "";
     this.createdAt = new Date();
+    this.isPinned = false;
   }
 }

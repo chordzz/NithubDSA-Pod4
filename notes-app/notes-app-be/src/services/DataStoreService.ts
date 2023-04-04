@@ -10,8 +10,8 @@ export interface DataStore {
   create(note: Notes): Promise<Notes>;
   getNote(id: string): Notes;
   getNotes(): Notes[];
-  update(id: string, note: Notes): Promise<boolean>;
-
+  update(previousNote: Notes, note: Notes): Promise<Notes>;
+  search(word: string): Promise<Notes[]>;
   delete(id: string): boolean;
 }
 
@@ -21,6 +21,7 @@ export interface DataStore {
 class DataStoreImpl implements DataStore {
   constructor(private readonly indexService: IndexService) {}
   create = async (note: Notes): Promise<Notes> => {
+    // @ts-ignore
     db[note.id] = note;
 
     this.indexService.index(note);
@@ -28,23 +29,33 @@ class DataStoreImpl implements DataStore {
     return note;
   };
 
+  search = async (word: string): Promise<Notes[]> => {
+    const notesIndex = this.indexService.getNotes(word);
+    return Object.keys(notesIndex).map(this.getNote)
+  }
+
   delete(id: string): boolean {
     return false;
   }
 
   getNote(id: string): Notes {
+    // @ts-ignore
     const note = db[id];
     return note;
+  }
+
+  getPinnedNote(id: string) {
+    
   }
 
   getNotes(): Notes[] {
     return [];
   }
 
-  update = async (id: string, currentNote: Notes): Promise<boolean> => {
-    const previousNote = db[id];
+  update = async (previousNote: Notes, currentNote: Notes): Promise<Notes> => {
     this.indexService.reIndex(previousNote, currentNote);
-    return false;
+    previousNote.content = currentNote.content;
+    return currentNote;
   };
 }
 
