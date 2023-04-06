@@ -1,13 +1,23 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.note1 {
+    @apply h-[120px] w-[250px] md:h-[150px] md:w-[300px] border-r-2 border-b-2 border-[#FFFFF] rounded-r-3xl rounded-bl-3xl my-2 bg-note1
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.note2 {
+    @apply h-[120px] w-[250px] md:h-[150px] md:w-[300px] border-r-2 border-b-2 border-[#FFFFF] rounded-r-3xl rounded-bl-3xl my-2 bg-note2
+}
+
+.note3 {
+    @apply h-[120px] w-[250px] md:h-[150px] md:w-[300px] border-r-2 border-b-2 border-[#FFFFF] rounded-r-3xl rounded-bl-3xl my-2 bg-note3
+}
+
+.note4 {
+    @apply h-[120px] w-[250px] md:h-[150px] md:w-[300px] border-r-2 border-b-2 border-[#FFFFF] rounded-r-3xl rounded-bl-3xl my-2 bg-note4
+}
+
+.note5 {
+    @apply h-[120px] w-[250px] md:h-[150px] md:w-[300px] border-r-2 border-b-2 border-[#FFFFF] rounded-r-3xl rounded-bl-3xl my-2 bg-note5
 }
