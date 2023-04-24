@@ -34,7 +34,7 @@ class NoteServices {
     }
 
     public getPinnedNote = async (): Promise<ResponseContext> => {
-        const pinnedNotes = await this.noteRepo.getNotes()
+        const pinnedNotes = this.noteRepo.getNotes()
         return {};
     }
 
@@ -43,7 +43,7 @@ class NoteServices {
 
         let notes;
         if(!word){
-            notes = await this.noteRepo.getNotes();
+            notes = this.noteRepo.getNotes();
         }else{
             notes = await this.noteRepo.search(word);
         }
@@ -60,7 +60,7 @@ class NoteServices {
      * @returns Promise<ResponseContext>
      */
     public getNotes = async (): Promise<ResponseContext> => {
-        const notes = await this.noteRepo.getNotes();
+        const notes = this.noteRepo.getNotes();
 
         return {
             code: 200,

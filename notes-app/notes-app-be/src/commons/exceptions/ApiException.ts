@@ -1,10 +1,12 @@
-
+import {override} from "joi";
 
 
 export class ApiException extends Error {
+
+    // @ts-ignore
     name: string;
     protected statusCode: number;
-    protected details: any | Record<any, any> | string; //TODO: work on this later.
+    protected details: any | Record<any, any> | string;
     constructor(message?: string) {
         super(message);
         this.name = "API Exception";

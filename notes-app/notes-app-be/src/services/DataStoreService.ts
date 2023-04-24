@@ -1,5 +1,4 @@
 import { Notes } from "../entities";
-// @ts-ignore
 import * as db from "../datastore/notes.store.json";
 import IndexServiceImpl, { IndexService } from "./IndexService";
 

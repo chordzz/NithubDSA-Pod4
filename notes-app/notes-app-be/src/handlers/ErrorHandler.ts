@@ -18,4 +18,4 @@ export class ErrorHandler extends Handler {
     }
 }
 
-export const errorHandler = new ErrorHandler();
+export const errorHandler: ErrorHandler = new ErrorHandler();

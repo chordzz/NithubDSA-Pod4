@@ -1,4 +1,3 @@
-import { DataStore } from "./DataStoreService";
 import { Notes } from "../entities";
 
 export type Index = {

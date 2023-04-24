@@ -19,7 +19,7 @@ handlers:[handle]
     - Check the Error capture stack trace stuff.
     - put the types and interfaces in their appropriate folders
     - Finish the DataStoreImpl class.
-    - Finish dockerizing the application.
+    - Finish dockerized the application.
 
 
 

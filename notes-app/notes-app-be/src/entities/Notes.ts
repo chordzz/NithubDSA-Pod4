@@ -1,4 +1,4 @@
-import * as rand from "nanoid";
+import rand from "crypto";
 
 
 export class Notes {
@@ -13,7 +13,7 @@ export class Notes {
   public isPinned: boolean;
 
   constructor() {
-    this.id = rand.random(10).toString();
+    this.id = rand.randomBytes(10).toString("hex");
     this.title = "";
     this.content = "";
     this.createdAt = new Date();

@@ -1,5 +1,5 @@
 import {Handler} from "./Handler";
-import {NextFunction, Request} from "express";
+import {NextFunction, Request, Response} from "express";
 import {NotFoundException} from "../commons/exceptions";
 
 class NotFoundHandler extends Handler {
@@ -8,4 +8,4 @@ class NotFoundHandler extends Handler {
     }
 }
 
-export const notFoundHandler = new NotFoundHandler();
+export const notFoundHandler: NotFoundHandler = new NotFoundHandler();
