@@ -15,7 +15,7 @@ export type ResponseContext = {
 export type AnyFunction = (ctx: RequestContext) => any;
 
 export interface RequestContext {
-    body: any;
+    body: Record<string, any>;
     params: any;
     query: any;
 }
@@ -44,8 +44,8 @@ class ControllerHandler extends Handler {
                 try{
                     if (schema){
                         if (body) validate(body, schema)
-                        if (params) validate(params, schema)
-                        if (query) validate(query, schema);
+                        else if (params) validate(params, schema)
+                        else if (query) validate(query, schema);
                     }
 
                 }catch (e: any){

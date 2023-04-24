@@ -19,4 +19,14 @@ export class Notes {
     this.createdAt = new Date();
     this.isPinned = false;
   }
+
+  toString() {
+    return {
+      id: this.id,
+      title: this.title,
+      content: this.content,
+      createdAt: this.createdAt,
+      isPinned: this.isPinned,
+    }
+  }
 }

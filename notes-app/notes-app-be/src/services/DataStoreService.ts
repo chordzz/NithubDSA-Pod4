@@ -1,6 +1,7 @@
 import { Notes } from "../entities";
 import * as db from "../datastore/notes.store.json";
 import IndexServiceImpl, { IndexService } from "./IndexService";
+import * as fs from "fs/promises";
 
 /**
  * @classdesc Data store interface.
@@ -22,6 +23,16 @@ class DataStoreImpl implements DataStore {
   create = async (note: Notes): Promise<Notes> => {
     // @ts-ignore
     db[note.id] = note;
+    const helperArr = []
+
+    // NithubDSA-Pod4/notes-app/notes-app-be/
+    const notes = await fs.readFile("src/datastore/notes.store.json") as Buffer
+    
+    helperArr.push(notes.toString('utf-8'))
+    helperArr.push(note.toString());
+
+    console.log(helperArr, "helper");
+    await fs.appendFile("src/datastore/notes.store.json", Buffer.from(JSON.stringify(notes)));
 
     this.indexService.index(note);
 
